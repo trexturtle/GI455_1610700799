@@ -25,7 +25,7 @@ namespace ProgramChat
         // Start is called before the first frame update
         void Start()
         {
-            
+
         }
     
         // Update is called once per frame
@@ -43,7 +43,6 @@ namespace ProgramChat
             {
                 //_webSocket.Send(("Random Number : " + Random.Range(0, 999999)));
                 _webSocket.Send(usernameInput.text + " : " + chatTextInput.text);
-            
                 chatTextInput.text = "";
             }
         }
@@ -76,7 +75,6 @@ namespace ProgramChat
         {
             //127.0.0.1//5500
             _webSocket = new WebSocket("ws://" + ipAddressInput.text + ":" + portInput.text + "/"); //Connect to Node Js
-            //_webSocket = new WebSocket($"ws://{0}:{1}/", ipAddressInput.text, portInput.text); #didn't work :(
 
             _webSocket.OnMessage += OnMessage;
             
